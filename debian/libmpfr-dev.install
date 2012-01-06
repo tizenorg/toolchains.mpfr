@@ -1,0 +1,3 @@
+usr/lib/libmpfr.so	usr/lib/
+usr/lib/libmpfr.a	usr/lib/
+usr/include/*.h		usr/include/
