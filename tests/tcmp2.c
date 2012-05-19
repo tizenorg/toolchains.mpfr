@@ -1,7 +1,7 @@
 /* Test file for mpfr_cmp2.
 
-Copyright 1999, 2000, 2001, 2002, 2003, 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
-Contributed by the Arenaire and Caramel projects, INRIA.
+Copyright 1999, 2000, 2001, 2002, 2003, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+Contributed by the Arenaire and Cacao projects, INRIA.
 
 This file is part of the GNU MPFR Library.
 
@@ -69,7 +69,7 @@ worst_cases (void)
           mpfr_out_str (stdout, 2, 0, x, MPFR_RNDN);
           printf ("\ny=");
           mpfr_out_str (stdout, 2, 0, y, MPFR_RNDN);
-          printf ("\ngot %lu instead of 1\n", (unsigned long) l);
+          printf ("\ngot %lu instead of 1\n", l);
           exit (1);
         }
 
@@ -81,7 +81,7 @@ worst_cases (void)
           mpfr_out_str (stdout, 2, 0, x, MPFR_RNDN);
           printf ("\ny=");
           mpfr_out_str (stdout, 2, 0, y, MPFR_RNDN);
-          printf ("\ngot %lu instead of 0\n", (unsigned long) l);
+          printf ("\ngot %lu instead of 0\n", l);
           exit (1);
         }
     }
@@ -113,8 +113,7 @@ worst_cases (void)
                   mpfr_out_str (stdout, 2, 0, x, MPFR_RNDN);
                   printf ("\ny=");
                   mpfr_out_str (stdout, 2, 0, y, MPFR_RNDN);
-                  printf ("\ngot %lu instead of %u\n",
-                          (unsigned long) l, expected);
+                  printf ("\ngot %lu instead of %u\n", l, expected);
                   exit (1);
                 }
               set_bit (x, i + j + k + 2, 0);
@@ -128,8 +127,7 @@ worst_cases (void)
                   mpfr_out_str (stdout, 2, 0, x, MPFR_RNDN);
                   printf ("\ny=");
                   mpfr_out_str (stdout, 2, 0, y, MPFR_RNDN);
-                  printf ("\ngot %lu instead of %u\n",
-                          (unsigned long) l, expected);
+                  printf ("\ngot %lu instead of %u\n", l, expected);
                   exit (1);
                 }
             }
@@ -175,7 +173,7 @@ tcmp2 (double x, double y, int i)
       mpfr_out_str (stdout, 2, 0, xx, MPFR_RNDN);
       printf ("\ny=");
       mpfr_out_str (stdout, 2, 0, yy, MPFR_RNDN);
-      printf ("\ngot %lu instead of %d\n", (unsigned long) j, i);
+      printf ("\ngot %lu instead of %d\n", j, i);
       exit (1);
     }
   mpfr_clear(xx); mpfr_clear(yy);
@@ -204,7 +202,7 @@ special (void)
       printf ("y=");
       mpfr_print_binary (y);
       puts ("");
-      printf ("got %lu, expected 1\n", (unsigned long) j);
+      printf ("got %lu, expected 1\n", j);
       exit (1);
     }
 
@@ -217,7 +215,7 @@ special (void)
       printf ("Error in mpfr_cmp2:\n");
       printf ("x="); mpfr_print_binary(x); puts ("");
       printf ("y="); mpfr_print_binary(y); puts ("");
-      printf ("got %lu, expected 32\n", (unsigned long) j);
+      printf ("got %lu, expected 32\n", j);
       exit (1);
     }
 
@@ -230,7 +228,7 @@ special (void)
       printf ("Error in mpfr_cmp2:\n");
       printf ("x="); mpfr_print_binary(x); puts ("");
       printf ("y="); mpfr_print_binary(y); puts ("");
-      printf ("got %lu, expected 164\n", (unsigned long) j);
+      printf ("got %lu, expected 164\n", j);
       exit (1);
     }
 
@@ -244,7 +242,7 @@ special (void)
       printf ("Error in mpfr_cmp2:\n");
       printf ("x="); mpfr_print_binary(x); puts ("");
       printf ("y="); mpfr_print_binary(y); puts ("");
-      printf ("got %lu, expected 127\n", (unsigned long) j);
+      printf ("got %lu, expected 127\n", j);
       exit (1);
     }
 
@@ -258,7 +256,7 @@ special (void)
       printf ("Error in mpfr_cmp2:\n");
       printf ("x="); mpfr_print_binary(x); puts ("");
       printf ("y="); mpfr_print_binary(y); puts ("");
-      printf ("got %lu, expected 63\n", (unsigned long) j);
+      printf ("got %lu, expected 63\n", j);
       exit (1);
     }
 
@@ -272,7 +270,7 @@ special (void)
       printf ("Error in mpfr_cmp2:\n");
       printf ("x="); mpfr_print_binary(x); puts ("");
       printf ("y="); mpfr_print_binary(y); puts ("");
-      printf ("got %lu, expected 63\n", (unsigned long) j);
+      printf ("got %lu, expected 63\n", j);
       exit (1);
     }
 

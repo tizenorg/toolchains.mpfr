@@ -1,7 +1,7 @@
 /* tzeta -- test file for the Riemann Zeta function
 
-Copyright 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
-Contributed by the Arenaire and Caramel projects, INRIA.
+Copyright 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+Contributed by Jean-Luc Re'my and the Spaces project, INRIA Lorraine.
 
 This file is part of the GNU MPFR Library.
 
@@ -249,11 +249,10 @@ main (int argc, char *argv[])
   mpfr_set_prec (z, 53);
 
   mpfr_set_ui (s, 1, MPFR_RNDN);
-  mpfr_clear_divby0();
   mpfr_zeta (z, s, MPFR_RNDN);
-  if (!mpfr_inf_p (z) || MPFR_SIGN (z) < 0 || !mpfr_divby0_p())
+  if (!mpfr_inf_p (z) || MPFR_SIGN (z) < 0)
     {
-      printf ("Error in mpfr_zeta for s = 1 (should be +inf) with divby0 flag\n");
+      printf ("Error in mpfr_zeta for s = 1 (should be +inf)\n");
       exit (1);
     }
 
