@@ -14,6 +14,7 @@ Group:      System/Libraries
 License:    LGPLv3+ and GPLv3+
 URL:        http://www.mpfr.org/
 Source0:    ftp://ftp.gnu.org/gnu/mpfr/%{name}-%{version}.tar.xz
+Source1001: packaging/mpfr.manifest 
 Patch0:     mpfr-3.0.0-debian.patch
 Requires:   gmp >= 4.2.3
 Requires(post): /sbin/ldconfig
@@ -57,6 +58,7 @@ install the mpfr package.
 # << setup
 
 %build
+cp %{SOURCE1001} .
 # >> build pre
 # << build pre
 
@@ -87,6 +89,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest mpfr.manifest
 %defattr(-,root,root,-)
 # >> files
 %doc COPYING COPYING.LESSER NEWS README
@@ -95,6 +98,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest mpfr.manifest
 %defattr(-,root,root,-)
 # >> files devel
 %doc %{_docdir}/%{name}
