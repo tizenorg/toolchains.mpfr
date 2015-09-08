@@ -9,14 +9,14 @@
 Name:       mpfr
 Summary:    A C library for multiple-precision floating-point computations
 Version:    3.0.0
-Release:    1.1
+Release:    1
 Group:      System/Libraries
 License:    LGPLv3+ and GPLv3+
 URL:        http://www.mpfr.org/
 Source0:    ftp://ftp.gnu.org/gnu/mpfr/%{name}-%{version}.tar.xz
-Source1001: packaging/mpfr.manifest 
+Source100:  mpfr.yaml
 Patch0:     mpfr-3.0.0-debian.patch
-Requires:   gmp >= 4.2.3
+Requires:   gmp >= 4.2.1
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  autoconf
@@ -58,7 +58,6 @@ install the mpfr package.
 # << setup
 
 %build
-cp %{SOURCE1001} .
 # >> build pre
 # << build pre
 
@@ -89,7 +88,6 @@ rm -rf %{buildroot}
 
 
 %files
-%manifest mpfr.manifest
 %defattr(-,root,root,-)
 # >> files
 %doc COPYING COPYING.LESSER NEWS README
@@ -98,7 +96,6 @@ rm -rf %{buildroot}
 
 
 %files devel
-%manifest mpfr.manifest
 %defattr(-,root,root,-)
 # >> files devel
 %doc %{_docdir}/%{name}
